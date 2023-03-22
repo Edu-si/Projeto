@@ -12,5 +12,6 @@ PROJETO DESENVOLVIDO
 WEBAPI NET CORE 6 
 SQL SERVER 
 
-https://localhost:7107/api/tarefas/
+https://localhost:7107/api/tarefas/ 
+
 https://localhost:7107/api/tarefas/tarefas2
