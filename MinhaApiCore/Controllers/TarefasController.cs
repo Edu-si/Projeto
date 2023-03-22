@@ -20,7 +20,7 @@ namespace MinhaApiCore.Controllers
         {
             _context = context;
         }
-
+        
         // GET: api/tarefas
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Dados>>> GetTarefa1()
