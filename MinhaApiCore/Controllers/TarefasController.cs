@@ -30,7 +30,15 @@ namespace MinhaApiCore.Controllers
             string? line;
 
             while ((line = file.ReadLine()) != null)
+            {
                 Console.WriteLine(line);
+
+            }
+
+            IQueryable<Dados> dados =
+                   from Dados in _context.Dados
+                   select Dados;
+
 
             file.Close();
 
