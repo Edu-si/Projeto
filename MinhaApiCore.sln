@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projeto", "MinhaApiCore\Projeto.csproj", "{425B04EF-6558-46BE-9656-3806B8DC3FF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinhaApiCore", "MinhaApiCore\MinhaApiCore.csproj", "{7A13CC4F-0333-4FAC-9DF9-98F3579C0588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{425B04EF-6558-46BE-9656-3806B8DC3FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{425B04EF-6558-46BE-9656-3806B8DC3FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{425B04EF-6558-46BE-9656-3806B8DC3FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{425B04EF-6558-46BE-9656-3806B8DC3FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A13CC4F-0333-4FAC-9DF9-98F3579C0588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A13CC4F-0333-4FAC-9DF9-98F3579C0588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A13CC4F-0333-4FAC-9DF9-98F3579C0588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A13CC4F-0333-4FAC-9DF9-98F3579C0588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
