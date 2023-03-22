@@ -77,8 +77,7 @@ namespace MinhaApiCore.Controllers
                                         else if (linha.Contains("Para:"))
                                         {
                                             destinatario = linha.Remove(0, 6);
-                                            //     dados.Destinatario = destinatario;
-                                            //Console.WriteLine(Para);
+                                          
                                         }
                                         else
                                         {
@@ -97,8 +96,7 @@ namespace MinhaApiCore.Controllers
                                             _context.Dados.Add(dados);
                                             _context.SaveChanges();
                                         }
-                                        // Console.WriteLine(dados);
-                                        //Console.WriteLine("{0} : {1}", fi.Name, fi.Directory);
+                                        
                                     }
                                 }
                             }
