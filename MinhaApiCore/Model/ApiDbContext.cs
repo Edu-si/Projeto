@@ -11,5 +11,6 @@ namespace MinhaApiCore.Model
         }
 
         public DbSet<Dados> Dados {  get; set; }
+        public DbSet<PalavraChave> PalavraChave { get; set; }
     }
 }
