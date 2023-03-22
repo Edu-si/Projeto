@@ -1,0 +1,17 @@
+# Projeto
+
+OBSERVAÇÕES
+
+- RODAR O PROJETO DENTRO DA PASTA C:\Fiotec\MinhaApiCore
+
+- NÃO CONSEGUI FAZER A TAREFA 2, NÃO COMPREENDI O QUE ERA PRA SER FEITO! 
+SÓ CRIEI O METODO 
+
+PROJETO DESENVOLVIDO 
+
+WEBAPI NET CORE 6 
+SQL SERVER 
+
+https://localhost:7107/api/tarefas/ 
+
+https://localhost:7107/api/tarefas/tarefas2
