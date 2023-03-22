@@ -40,7 +40,8 @@ namespace MinhaApiCore.Controllers
                      where Dados.NomeArquivo == fi.Name
                      select Dados;
 
-                if (verificar.Count() > 1)
+                //SE NÃO EXISTE CADASTRA O ARQUIVO
+                if (verificar.Count() == 0)
                 {
                     try
                     {
