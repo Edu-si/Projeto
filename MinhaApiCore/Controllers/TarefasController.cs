@@ -21,31 +21,6 @@ namespace MinhaApiCore.Controllers
             _context = context;
         }
 
-        // GET: api/tarefas2
-        [HttpGet("tarefas2")]
-        public async Task<ActionResult<IEnumerable<Dados>>> GetTarefa2()
-        {
-            string diretorio = @"C:\Fiotec\MinhaApiCore\MinhaApiCore\Palavras\Externo_palavras.txt";
-            using var file = new StreamReader(diretorio);
-            string? line;
-
-            while ((line = file.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-
-            }
-
-            IQueryable<Dados> dados =
-                   from Dados in _context.Dados
-                   select Dados;
-
-
-            file.Close();
-
-
-            return Ok();
-        }
-
         // GET: api/tarefas
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Dados>>> GetTarefa1()
@@ -145,9 +120,33 @@ namespace MinhaApiCore.Controllers
 
             return await _context.Dados.ToListAsync();
         }
-        
-  
 
 
-     }
+        // GET: api/tarefas2
+        [HttpGet("tarefas2")]
+        public async Task<ActionResult<IEnumerable<Dados>>> GetTarefa2()
+        {
+            string diretorio = @"C:\Fiotec\MinhaApiCore\MinhaApiCore\Palavras\Externo_palavras.txt";
+            using var file = new StreamReader(diretorio);
+            string? line;
+
+            while ((line = file.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+
+            }
+
+            IQueryable<Dados> dados =
+                   from Dados in _context.Dados
+                   select Dados;
+
+
+            file.Close();
+
+
+            return Ok();
+        }
+
+
+    }
 }
