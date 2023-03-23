@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using MinhaApiCore.Model;
+using NuGet.Versioning;
+using static Azure.Core.HttpHeader;
 
 namespace MinhaApiCore.Controllers
 {
@@ -124,27 +127,45 @@ namespace MinhaApiCore.Controllers
 
         // GET: api/tarefas2
         [HttpGet("tarefas2")]
-        public async Task<ActionResult<IEnumerable<Dados>>> GetTarefa2()
+        public async Task<ActionResult<IEnumerable<PalavraChave>>> GetTarefa2()
         {
             string diretorio = @"C:\Fiotec\MinhaApiCore\MinhaApiCore\Palavras\Externo_palavras.txt";
             using var file = new StreamReader(diretorio);
             string? line;
 
-            while ((line = file.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-
-            }
+            _context.PalavraChave.ExecuteDelete();
 
             IQueryable<Dados> dados =
-                   from Dados in _context.Dados
-                   select Dados;
+                from Dados in _context.Dados
+                select Dados;
+         
+              
+            foreach (Dados retorno in dados)
+            {
+              
+                // LER O EXTERNO PALAVRAS
+                while ((line = file.ReadLine()) != null)
+                {
+                    var arr = retorno.Conteudo.Split(' ');
+                    if (arr.Contains(line))
+                    {
+                        PalavraChave palavraChave = new PalavraChave
+                        {
+                            Id = Guid.NewGuid(),
+                            nome = line,
+                            categoria = "Dicionário"
+                        };
 
-
+                        _context.PalavraChave.Add(palavraChave);
+                        _context.SaveChanges();
+                    }
+                }
+               
+            }
+         
             file.Close();
 
-
-            return Ok();
+            return await _context.PalavraChave.ToListAsync();
         }
 
 
